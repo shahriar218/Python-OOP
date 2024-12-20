@@ -10,13 +10,14 @@ class Item:
 
     def calculate_total_cost(self):
         return self.price * self.quantity
+    def apply_discount(self):
+        self.price = self.price * Item.pay_rate
 
 
 item1 = Item("Phone", 1000, 1)
-item2 = Item("Laptop", 5000, 3)
+item1.apply_discount()
+print(item1.price)
 
-print(Item.__dict__)  # Magic attribute: All the attribute for Class level
-print(item1.__dict__)  # Magic attribute: All the attribute for Class level
 
 
 
